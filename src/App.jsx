@@ -152,7 +152,7 @@ export default function App() {
     sectorMap[g.sector].amt += g.grantAmt;
   });
   const sectorData = Object.entries(sectorMap)
-    .map(([k, v]) => ({ sector: k.split("-")[0].trim(), full: k, ...v }))
+    .map(([k, v]) => ({ sector: k.includes("-") ? k.split("-").slice(1).join("-").trim() : k, full: k, ...v }))
     .sort((a,b) => b.count - a.count);
 
   /* Region data */
@@ -391,7 +391,10 @@ export default function App() {
                 { name: "Kresge Foundation", data: kresgeGrants, color: C.kresge },
               ].map(f => {
                 const sm = {};
-                f.data.forEach(g => sm[g.sector.split("-")[0].trim()] = (sm[g.sector.split("-")[0].trim()]||0)+1);
+                f.data.forEach(g => {
+                  const label = g.sector.includes("-") ? g.sector.split("-").slice(1).join("-").trim() : g.sector;
+                  sm[label] = (sm[label]||0)+1;
+                });
                 const pd = Object.entries(sm).map(([n,v]) => ({ name: n, value: v }));
                 return (
                   <Card key={f.name}>
@@ -418,7 +421,7 @@ export default function App() {
                 <BarChart data={sectorData.map(s => ({ ...s, amt: +(s.amt/1e6).toFixed(2) }))} layout="vertical">
                   <CartesianGrid strokeDasharray="3 3" stroke={C.border} horizontal={false} />
                   <XAxis type="number" tick={{ fill: C.muted, fontSize: 10 }} tickFormatter={v => `$${v}M`} />
-                  <YAxis type="category" dataKey="sector" tick={{ fill: C.muted, fontSize: 10 }} width={48} />
+                  <YAxis type="category" dataKey="sector" tick={{ fill: C.muted, fontSize: 10 }} width={110} />
                   <Tooltip content={<CustomTip fmt={v => `$${v}M`} />} />
                   <Bar dataKey="amt" name="Disbursed $M" radius={[0,4,4,0]}>
                     {sectorData.map((_, i) => <Cell key={i} fill={C.sectors[i % C.sectors.length]} />)}
