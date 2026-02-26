@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 // NOTE: Replace 'philanthropy-effectiveness-tool' with your actual GitHub repo name
 export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: command === 'serve' ? '/' : '/philanthropic-foundations-evaluation-tool/',
+  base: command === 'serve' ? '/' : '/philanthropy-tool/',
 }))
