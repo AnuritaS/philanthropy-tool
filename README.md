@@ -2,7 +2,7 @@
 
 > A master's-level data visualization portfolio project analyzing grantmaking strategy, sector allocation, geographic focus, and impact evaluation across two major U.S. environmental justice foundations: **Tides Foundation** and **Kresge Foundation** (2015-2024).
 
-[![Live Demo](https://img.shields.io/badge/Live-Dashboard-4ECDC4?style=for-the-badge)](https://YOUR-USERNAME.github.io/philanthropy-effectiveness-tool/)
+[![Live Demo](https://img.shields.io/badge/Live-Dashboard-4ECDC4?style=for-the-badge)](https://anuritas.github.io/philanthropy-tool/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
 [![Recharts](https://img.shields.io/badge/Recharts-2.x-E8651A?style=for-the-badge)](https://recharts.org/)
 
