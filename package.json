@@ -1,9 +1,9 @@
 {
-  "name": "Philanthropic-foundations-evaluation-tool",
+  "name": "Philanthropy-tool",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://AnuritaS.github.io/philanthropic-foundations-evaluation-tool/",
+  "homepage": "https://AnuritaS.github.io/philanthropy-tool/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
