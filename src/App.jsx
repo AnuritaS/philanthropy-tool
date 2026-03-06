@@ -89,8 +89,8 @@ const KPI = ({ label, value, sub, color }) => (
   </div>
 );
 
-const SectionTitle = ({ children }) => (
-  <h2 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: C.accent, fontFamily: "monospace" }}>
+const SectionTitle = ({ children, color }) => (
+  <h2 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: color || C.accent, fontFamily: "monospace" }}>
     ◈ {children}
   </h2>
 );
@@ -326,7 +326,7 @@ export default function App() {
                       <p className="font-black text-lg" style={{ fontFamily: "serif", color: f.color }}>{fmtM(f.data.reduce((s,g)=>s+g.grantAmt,0))}</p>
                     </div>
                     <div>
-                      <p className="text-xs" style={{ color: C.muted, fontWeight: 900 }}>Sector HHI</p>
+                      <p className="text-xs" style={{ color: C.muted }}>Sector HHI</p>
                       <p className="font-bold text-sm" style={{ color: C.text }}>{f.name.includes("Tides") ? tidesHHI : kresgeHHI}</p>
                     </div>
                     <div>
@@ -443,8 +443,8 @@ export default function App() {
                 </BarChart>
               </ResponsiveContainer>
               <p className="text-xs mt-3 leading-relaxed" style={{ color: C.muted }}>
-                <strong style={{ color: C.tides, fontWeight: 900 }}>Tides</strong>: Nationally distributed with a West Coast and Southern tilt, reflecting frontline community geography. 
-                &nbsp;<strong style={{ color: C.kresge, fontWeight: 900 }}>Kresge</strong>: Midwest-anchored (Detroit HQ) with strong investments in rust-belt urban resilience.
+                <strong style={{ color: C.tides}}>Tides</strong style={{ fontWeight: 900}}>: Nationally distributed with a West Coast and Southern tilt, reflecting frontline community geography. 
+                &nbsp;<strong style={{ color: C.kresge}}>Kresge</strong style={{ fontWeight: 900}}>: Midwest-anchored (Detroit HQ) with strong investments in rust-belt urban resilience.
               </p>
             </Card>
 
@@ -491,8 +491,8 @@ export default function App() {
                 </BarChart>
               </ResponsiveContainer>
               <p className="text-xs mt-3 leading-relaxed" style={{ color: C.muted }}>
-                <strong style={{ color: C.kresge, fontWeight: 900 }}>Kresge</strong> shows higher concentration in the $150K–$1M range, consistent with institutional capacity-building grants.
-                &nbsp;<strong style={{ color: C.tides, fontWeight: 900 }}>Tides</strong> distributes smaller grants more broadly, enabling grassroots reach across many orgs.
+                <strong style={{ color: C.kresge}}>Kresge</strong  style={{ fontWeight: 900}}> shows higher concentration in the $150K–$1M range, consistent with institutional capacity-building grants.
+                &nbsp;<strong style={{ color: C.tides}}>Tides</strong style={{ fontWeight: 900}}> distributes smaller grants more broadly, enabling grassroots reach across many orgs.
               </p>
             </Card>
 
@@ -549,7 +549,6 @@ export default function App() {
               <div className="flex flex-col gap-1 mb-3">
                 <p className="text-xs" style={{ color: C.muted, fontWeight: 900 }}>
                   Composite scores (1–5) synthesized from grant structure, outcome reporting rates, multi-year commitments, and BIPOC-led portfolio share.
-                  Methodology draws on OECD DAC (2019), Candid Philanthropy Classification System, and CEP Grantee Perception benchmarks.
                 </p>
               </div>
               <ResponsiveContainer width="100%" height={300}>
@@ -641,16 +640,16 @@ export default function App() {
 
             {/* Recommendations */}
             <Card>
-              <SectionTitle>Strategic Recommendations based on my Evaluation Findings</SectionTitle>
+              <SectionTitle color={C.gold}>Strategic Recommendations based on my Evaluation Findings</SectionTitle>
               <div className="grid gap-4" style={{ gridTemplateColumns: "1fr 1fr" }}>
                 {[
-                  { org: "Tides Foundation", color: C.tides, fontWeight: 900, recs: [
+                  { org: "Tides Foundation", color: C.tides, recs: [
                     "Expand multi-year commitments to 3-year cycles to deepen systemic impact",
                     "Increase PRIs and blended finance instruments to leverage philanthropic capital",
                     "Develop standardized outcome reporting protocols across fiscal sponsees",
                     "Pilot participatory budgeting for Frontline Justice Fund allocations",
                   ]},
-                  { org: "Kresge Foundation", color: C.kresge, fontWeight: 900, recs: [
+                  { org: "Kresge Foundation", color: C.kresge, recs: [
                     "Increase general operating support share from ~40% toward the 55% sector benchmark",
                     "Deepen rural and peri-urban geographic reach in climate-vulnerable regions",
                     "Develop community-defined indicators alongside foundation-led evaluation",
@@ -675,9 +674,6 @@ export default function App() {
             {/* Grant Strategy Scorecard */}
             <Card>
               <SectionTitle>Grant Strategy Scorecard — Best Practice Alignment</SectionTitle>
-              <p className="text-xs mb-4" style={{ color: C.muted }}>
-                Based on Candid "State of Philanthropy" (2023), MacArthur Big Bets framework, NCRP Power-Building standards, and PEAK Grantmaking principles.
-              </p>
               <div className="overflow-x-auto">
                 <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "12px" }}>
                   <thead>
