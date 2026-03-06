@@ -241,7 +241,7 @@ export default function App() {
               </span>
             </div>
             <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "1.75rem", color: C.text, lineHeight: 1.2 }}>
-              Philanthropy Effectiveness<br />
+              Philanthropy Effectiveness
               <span style={{ color: C.accent }}>Evaluation Dashboard</span>
             </h1>
             <p className="text-xs mt-1" style={{ color: C.muted }}>
@@ -443,8 +443,10 @@ export default function App() {
                 </BarChart>
               </ResponsiveContainer>
               <p className="text-xs mt-3 leading-relaxed" style={{ color: C.muted }}>
-                <strong style={{ color: C.tides}}>Tides</strong style={{ fontWeight: 900}}>: Nationally distributed with a West Coast and Southern tilt, reflecting frontline community geography. 
-                &nbsp;<strong style={{ color: C.kresge}}>Kresge</strong style={{ fontWeight: 900}}>: Midwest-anchored (Detroit HQ) with strong investments in rust-belt urban resilience.
+                <strong style={{ color: C.tides, fontWeight: 900 }}>Tides</strong>
+                <strong style={{ fontWeight: 900, color: C.text }}>: Nationally distributed with a West Coast and Southern tilt, reflecting frontline community geography.</strong>
+                &nbsp;<strong style={{ color: C.kresge, fontWeight: 900 }}>Kresge</strong>
+                <strong style={{ fontWeight: 900, color: C.text }}>: Midwest-anchored (Detroit HQ) with strong investments in rust-belt urban resilience.</strong>
               </p>
             </Card>
 
@@ -491,8 +493,10 @@ export default function App() {
                 </BarChart>
               </ResponsiveContainer>
               <p className="text-xs mt-3 leading-relaxed" style={{ color: C.muted }}>
-                <strong style={{ color: C.kresge}}>Kresge</strong  style={{ fontWeight: 900}}> shows higher concentration in the $150K–$1M range, consistent with institutional capacity-building grants.
-                &nbsp;<strong style={{ color: C.tides}}>Tides</strong style={{ fontWeight: 900}}> distributes smaller grants more broadly, enabling grassroots reach across many orgs.
+                <strong style={{ color: C.tides, fontWeight: 900 }}>Tides</strong>
+                <strong style={{ fontWeight: 900, color: C.text }}>: shows higher concentration in the $150K–$1M range, consistent with institutional capacity-building grants.</strong>
+                &nbsp;<strong style={{ color: C.kresge, fontWeight: 900 }}>Kresge</strong>
+                <strong style={{ fontWeight: 900, color: C.text }}>: distributes smaller grants more broadly, enabling grassroots reach across many orgs.</strong>
               </p>
             </Card>
 
@@ -643,18 +647,18 @@ export default function App() {
               <SectionTitle color={C.gold}>Strategic Recommendations based on my Evaluation Findings</SectionTitle>
               <div className="grid gap-4" style={{ gridTemplateColumns: "1fr 1fr" }}>
                 {[
-                  { org: "Tides Foundation", color: C.tides, recs: [
-                    "Expand multi-year commitments to 3-year cycles to deepen systemic impact",
-                    "Increase PRIs and blended finance instruments to leverage philanthropic capital",
-                    "Develop standardized outcome reporting protocols across fiscal sponsees",
-                    "Pilot participatory budgeting for Frontline Justice Fund allocations",
-                  ]},
-                  { org: "Kresge Foundation", color: C.kresge, recs: [
-                    "Increase general operating support share from ~40% toward the 55% sector benchmark",
-                    "Deepen rural and peri-urban geographic reach in climate-vulnerable regions",
-                    "Develop community-defined indicators alongside foundation-led evaluation",
-                    "Expand BIPOC-led fund threshold from 55% toward Tides' 68% benchmark",
-                  ]},
+                 { org: "Tides Foundation", color: C.tides, recs: [
+                    <><strong style={{fontWeight:900, color: C.text}}>Expand multi-year commitments</strong> to 3-year cycles to deepen systemic impact</>,
+                    <><strong style={{fontWeight:900, color: C.text}}>Increase PRIs and blended finance instruments</strong> to leverage philanthropic capital</>,
+                    <><strong style={{fontWeight:900, color: C.text}}>Develop standardized outcome reporting protocols</strong> across fiscal sponsees</>,
+                    <><strong style={{fontWeight:900, color: C.text}}>Pilot participatory budgeting</strong> for Frontline Justice Fund allocations</>,
+                ]},
+                { org: "Kresge Foundation", color: C.kresge, recs: [
+                    <><strong style={{fontWeight:900, color: C.text}}>Increase general operating support</strong> share from ~40% toward the 55% sector benchmark</>,
+                    <><strong style={{fontWeight:900, color: C.text}}>Deepen rural and peri-urban geographic reach</strong> in climate-vulnerable regions</>,
+                    <><strong style={{fontWeight:900, color: C.text}}>Develop community-defined indicators</strong> alongside foundation-led evaluation</>,
+                    <><strong style={{fontWeight:900, color: C.text}}>Expand BIPOC-led fund threshold</strong> from 55% toward Tides' 68% benchmark</>,
+                ]},
                 ].map(f => (
                   <div key={f.org}>
                     <p className="text-xs font-bold mb-2" style={{ color: f.color }}>{f.org}</p>
