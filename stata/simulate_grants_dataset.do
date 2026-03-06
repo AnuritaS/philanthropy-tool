@@ -1,31 +1,9 @@
 /*============================================================
   PHILANTHROPY EFFECTIVENESS EVALUATION TOOL
-  Simulated Grants Dataset — Based on Foundation Center / Candid
-  Open 990 Data Structure (the gold-standard public dataset)
-  
-  REAL DATASET SUGGESTIONS:
-  ─────────────────────────────────────────────────────────────
-  1. Candid / Foundation Center (foundationcenter.org)
-     → Grants to Organizations dataset (990-PF filings)
-     → Variables: EIN, foundation name, recipient, amount,
-       subject/strategy codes (NTEE), geo (state/county/MSA),
-       grant year, grant type (general support vs. project)
+  Simulated Grants Dataset — Based on Candid
+  Open 990 Data Structure 
 
-  2. IRS Form 990 / 990-PF Public Data (irs.gov)
-     → Machine-readable XML via AWS S3 open data
-     → Free; requires parsing; best combined with Candid NTEE codes
-
-  3. GrantStation / Instrumentl
-     → Proprietary but trial access available
-
-  4. SSDI / Urban Institute NCCS Data Archive
-     → National Center for Charitable Statistics
-     → https://nccs.urban.org/
-
-  5. Open990 (open990.org)
-     → Aggregated, searchable 990 data; CSV downloads available
-
-  KEY VARIABLES TO COLLECT/SIMULATE:
+  KEY VARIABLES TO SIMULATE:
   ─────────────────────────────────────────────────────────────
   - grant_id          : unique identifier
   - foundation        : funder name
@@ -55,14 +33,7 @@
   - num_grants_total  : grantee concentration measure
   - hhi_sector        : Herfindahl-Hirschman Index of sector allocation
   - place_based       : 0/1 — place-based strategy
-  
-  MODEL REFERENCES:
-  ─────────────────────────────────────────────────────────────
-  - Buchanan (2019): "What it means to be a strategic funder"
-  - Twersky, Buchanan & Threlfall (2013): "Listening to grantees"
-  - OECD DAC criteria: Relevance, Coherence, Effectiveness,
-    Efficiency, Impact, Sustainability (applied to philanthropy)
-  - Candid Philanthropy Classification System (PCS): 2022 update
+
 ============================================================*/
 
 clear all
@@ -278,17 +249,6 @@ display "Ready for import into Python/R or dashboard visualization"
 
 /*============================================================
   FRAMEWORK NOTE — Impact Evaluation Logic:
-  
-  This simulation reflects best practices from:
-  1. Candid's Philanthropy Classification System (2022)
-     → NTEE codes, grant type taxonomy
-  2. CEP (Center for Effective Philanthropy) Grantee Perception Reports
-     → Multi-year, unrestricted = higher perceived impact
-  3. MacArthur Foundation's "Big Bet" model
-     → Large, long-duration grants to BIPOC-led orgs
-  4. OMB/PART evaluation criteria adapted for foundations
-  5. OECD DAC evaluation criteria (Relevance, Effectiveness,
-     Efficiency, Impact, Sustainability, Coherence)
   
   The impact_score composite approximates a "theory of change"
   fidelity index — how closely grant structure aligns with
