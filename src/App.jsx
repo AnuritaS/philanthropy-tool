@@ -239,7 +239,6 @@ export default function App() {
               <span className="text-xs font-mono tracking-widest uppercase px-2 py-1 rounded" style={{ background: C.accent+"22", color: C.accent }}>
                 Portfolio Project
               </span>
-              <span className="text-xs font-mono" style={{ color: C.muted }}>v1.0 — Simulated Data (n=1,200)</span>
             </div>
             <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "1.75rem", color: C.text, lineHeight: 1.2 }}>
               Philanthropy Effectiveness<br />
@@ -248,11 +247,6 @@ export default function App() {
             <p className="text-xs mt-1" style={{ color: C.muted }}>
               Tides Foundation · Kresge Foundation · Environmental & Racial Justice Grantmaking · 2015–2024
             </p>
-          </div>
-          <div className="flex gap-3 flex-wrap">
-            <Tag label="OECD DAC Framework" color={C.accent} />
-            <Tag label="Candid NTEE Codes" color={C.gold} />
-            <Tag label="CEP Standards" color={C.tides} />
           </div>
         </div>
       </div>
@@ -332,7 +326,7 @@ export default function App() {
                       <p className="font-black text-lg" style={{ fontFamily: "serif", color: f.color }}>{fmtM(f.data.reduce((s,g)=>s+g.grantAmt,0))}</p>
                     </div>
                     <div>
-                      <p className="text-xs" style={{ color: C.muted }}>Sector HHI</p>
+                      <p className="text-xs" style={{ color: C.muted, fontWeight: 900 }}>Sector HHI</p>
                       <p className="font-bold text-sm" style={{ color: C.text }}>{f.name.includes("Tides") ? tidesHHI : kresgeHHI}</p>
                     </div>
                     <div>
@@ -409,7 +403,7 @@ export default function App() {
                     </ResponsiveContainer>
                     <div className="mt-2 text-xs" style={{ color: C.muted }}>
                       Sector HHI: <strong style={{ color: f.color }}>{f.name.includes("Tides") ? tidesHHI : kresgeHHI}</strong>
-                      <span> (0=diverse · 1=concentrated)</span>
+                      <span> (0 = diverse · 1 =c oncentrated)</span>
                     </div>
                   </Card>
                 );
@@ -436,7 +430,7 @@ export default function App() {
         {activeTab === "geography" && (
           <div className="flex flex-col gap-6">
             <Card>
-              <SectionTitle>Regional Focus — Grants by Census Region</SectionTitle>
+              <SectionTitle>U.S.A. Regional Focus — Grants by Census Region</SectionTitle>
               <ResponsiveContainer width="100%" height={280}>
                 <BarChart data={regionData}>
                   <CartesianGrid strokeDasharray="3 3" stroke={C.border} />
@@ -449,8 +443,8 @@ export default function App() {
                 </BarChart>
               </ResponsiveContainer>
               <p className="text-xs mt-3 leading-relaxed" style={{ color: C.muted }}>
-                <strong style={{ color: C.tides }}>Tides</strong>: Nationally distributed with a West Coast and Southern tilt, reflecting frontline community geography. 
-                &nbsp;<strong style={{ color: C.kresge }}>Kresge</strong>: Midwest-anchored (Detroit HQ) with strong investments in rust-belt urban resilience.
+                <strong style={{ color: C.tides, fontWeight: 900 }}>Tides</strong>: Nationally distributed with a West Coast and Southern tilt, reflecting frontline community geography. 
+                &nbsp;<strong style={{ color: C.kresge, fontWeight: 900 }}>Kresge</strong>: Midwest-anchored (Detroit HQ) with strong investments in rust-belt urban resilience.
               </p>
             </Card>
 
@@ -497,8 +491,8 @@ export default function App() {
                 </BarChart>
               </ResponsiveContainer>
               <p className="text-xs mt-3 leading-relaxed" style={{ color: C.muted }}>
-                <strong style={{ color: C.kresge }}>Kresge</strong> shows higher concentration in the $150K–$1M range, consistent with institutional capacity-building grants.
-                &nbsp;<strong style={{ color: C.tides }}>Tides</strong> distributes smaller grants more broadly, enabling grassroots reach across many orgs.
+                <strong style={{ color: C.kresge, fontWeight: 900 }}>Kresge</strong> shows higher concentration in the $150K–$1M range, consistent with institutional capacity-building grants.
+                &nbsp;<strong style={{ color: C.tides, fontWeight: 900 }}>Tides</strong> distributes smaller grants more broadly, enabling grassroots reach across many orgs.
               </p>
             </Card>
 
@@ -553,7 +547,7 @@ export default function App() {
             <Card>
               <SectionTitle>OECD DAC Evaluation Criteria — Foundation Scores</SectionTitle>
               <div className="flex flex-col gap-1 mb-3">
-                <p className="text-xs" style={{ color: C.muted }}>
+                <p className="text-xs" style={{ color: C.muted, fontWeight: 900 }}>
                   Composite scores (1–5) synthesized from grant structure, outcome reporting rates, multi-year commitments, and BIPOC-led portfolio share.
                   Methodology draws on OECD DAC (2019), Candid Philanthropy Classification System, and CEP Grantee Perception benchmarks.
                 </p>
@@ -585,7 +579,7 @@ export default function App() {
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
-              <p className="text-xs mt-2" style={{ color: C.muted }}>
+              <p className="text-xs mt-2" style={{ color: C.muted, fontWeight: 900 }}>
                 General operating support consistently yields higher impact scores — aligns with CEP's "What Donors Know" research (2021).
               </p>
             </Card>
@@ -644,6 +638,40 @@ export default function App() {
               ))}
             </div>
 
+
+            {/* Recommendations */}
+            <Card>
+              <SectionTitle>Strategic Recommendations based on my Evaluation Findings</SectionTitle>
+              <div className="grid gap-4" style={{ gridTemplateColumns: "1fr 1fr" }}>
+                {[
+                  { org: "Tides Foundation", color: C.tides, fontWeight: 900, recs: [
+                    "Expand multi-year commitments to 3-year cycles to deepen systemic impact",
+                    "Increase PRIs and blended finance instruments to leverage philanthropic capital",
+                    "Develop standardized outcome reporting protocols across fiscal sponsees",
+                    "Pilot participatory budgeting for Frontline Justice Fund allocations",
+                  ]},
+                  { org: "Kresge Foundation", color: C.kresge, fontWeight: 900, recs: [
+                    "Increase general operating support share from ~40% toward the 55% sector benchmark",
+                    "Deepen rural and peri-urban geographic reach in climate-vulnerable regions",
+                    "Develop community-defined indicators alongside foundation-led evaluation",
+                    "Expand BIPOC-led fund threshold from 55% toward Tides' 68% benchmark",
+                  ]},
+                ].map(f => (
+                  <div key={f.org}>
+                    <p className="text-xs font-bold mb-2" style={{ color: f.color }}>{f.org}</p>
+                    <ul className="flex flex-col gap-1.5">
+                      {f.recs.map((r, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs" style={{ color: C.muted }}>
+                          <span style={{ color: f.color, marginTop: 2 }}>→</span>
+                          <span>{r}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
             {/* Grant Strategy Scorecard */}
             <Card>
               <SectionTitle>Grant Strategy Scorecard — Best Practice Alignment</SectionTitle>
@@ -682,39 +710,6 @@ export default function App() {
                 </table>
               </div>
             </Card>
-
-            {/* Recommendations */}
-            <Card>
-              <SectionTitle>Strategic Recommendations — Evaluation Findings</SectionTitle>
-              <div className="grid gap-4" style={{ gridTemplateColumns: "1fr 1fr" }}>
-                {[
-                  { org: "Tides Foundation", color: C.tides, recs: [
-                    "Expand multi-year commitments to 3-year cycles to deepen systemic impact",
-                    "Increase PRIs and blended finance instruments to leverage philanthropic capital",
-                    "Develop standardized outcome reporting protocols across fiscal sponsees",
-                    "Pilot participatory budgeting for Frontline Justice Fund allocations",
-                  ]},
-                  { org: "Kresge Foundation", color: C.kresge, recs: [
-                    "Increase general operating support share from ~40% toward the 55% sector benchmark",
-                    "Deepen rural and peri-urban geographic reach in climate-vulnerable regions",
-                    "Develop community-defined indicators alongside foundation-led evaluation",
-                    "Expand BIPOC-led fund threshold from 55% toward Tides' 68% benchmark",
-                  ]},
-                ].map(f => (
-                  <div key={f.org}>
-                    <p className="text-xs font-bold mb-2" style={{ color: f.color }}>{f.org}</p>
-                    <ul className="flex flex-col gap-1.5">
-                      {f.recs.map((r, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs" style={{ color: C.muted }}>
-                          <span style={{ color: f.color, marginTop: 2 }}>→</span>
-                          <span>{r}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </Card>
           </div>
         )}
       </div>
@@ -722,11 +717,18 @@ export default function App() {
       {/* ── Footer ── */}
       <div className="px-8 py-4 flex items-center justify-between flex-wrap gap-2" style={{ borderTop: `1px solid ${C.border}`, background: C.surface }}>
         <p className="text-xs" style={{ color: C.muted }}>
-          Simulated dataset (n=1,200) · Tides Foundation & Kresge Foundation · Environmental & Racial Justice Grantmaking
+          Simulated dataset (n=1,200) · v1.0
         </p>
         <p className="text-xs font-mono" style={{ color: C.muted }}>
           Framework: OECD DAC · CEP · Candid PCS · NCRP · MacArthur Big Bets
         </p>
+      </div>
+
+      <div className="px-8 py-2 flex items-center justify-center" style={{ background: C.bg }}>
+        <p className="text-xs font-mono" style={{ color: C.muted }}>
+    © {new Date().getFullYear()} <strong style={{ color: C.text }}>Anurita Srivastava</strong> · All rights reserved · 
+    Built for academic & portfolio purposes ·
+       </p>
       </div>
     </div>
   );
