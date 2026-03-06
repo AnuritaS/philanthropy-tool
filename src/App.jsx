@@ -236,16 +236,15 @@ export default function App() {
         <div className="flex items-start justify-between flex-wrap gap-4">
           <div>
             <div className="flex items-center gap-3 mb-1">
-              <span className="text-xs font-mono tracking-widest uppercase px-2 py-1 rounded" style={{ background: C.accent+"22", color: C.accent }}>
+              <span className="text-xs font-mono tracking-widest uppercase px-2 py-1 rounded" style={{ background: C.accent+"22", color: C.accent, position: "fixed", top: "1rem", right: "1rem", zIndex: 1000 }}>
                 Portfolio Project
               </span>
             </div>
             <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "1.75rem", color: C.text, lineHeight: 1.2 }}>
-              Philanthropy Effectiveness
-              <span style={{ color: C.accent }}>Evaluation Dashboard</span>
+              Philanthropy Effectiveness <span style={{ color: C.accent }}>Evaluation Dashboard</span>
             </h1>
-            <p className="text-xs mt-1" style={{ color: C.muted }}>
-              Tides Foundation · Kresge Foundation · Environmental & Racial Justice Grantmaking · 2015–2024
+            <p className="text-xs mt-1" style={{ color: C.gold }}>
+              Tides Foundation · Kresge Foundation · Environmental & Racial Justice Grantmaking · 2015-2024
             </p>
           </div>
         </div>
@@ -444,9 +443,9 @@ export default function App() {
               </ResponsiveContainer>
               <p className="text-xs mt-3 leading-relaxed" style={{ color: C.muted }}>
                 <strong style={{ color: C.tides, fontWeight: 900 }}>Tides</strong>
-                <strong style={{ fontWeight: 900, color: C.text }}>: Nationally distributed with a West Coast and Southern tilt, reflecting frontline community geography.</strong>
+                <strong style={{ fontWeight: 900, color: C.muted }}>: Nationally distributed with a West Coast and Southern tilt, reflecting frontline community geography.</strong>
                 &nbsp;<strong style={{ color: C.kresge, fontWeight: 900 }}>Kresge</strong>
-                <strong style={{ fontWeight: 900, color: C.text }}>: Midwest-anchored (Detroit HQ) with strong investments in rust-belt urban resilience.</strong>
+                <strong style={{ fontWeight: 900, color: C.muted }}>: Midwest-anchored (Detroit HQ) with strong investments in rust-belt urban resilience.</strong>
               </p>
             </Card>
 
@@ -494,9 +493,9 @@ export default function App() {
               </ResponsiveContainer>
               <p className="text-xs mt-3 leading-relaxed" style={{ color: C.muted }}>
                 <strong style={{ color: C.tides, fontWeight: 900 }}>Tides</strong>
-                <strong style={{ fontWeight: 900, color: C.text }}>: shows higher concentration in the $150K–$1M range, consistent with institutional capacity-building grants.</strong>
+                <strong style={{ fontWeight: 900, color: C.muted }}>: shows higher concentration in the $150K–$1M range, consistent with institutional capacity-building grants.</strong>
                 &nbsp;<strong style={{ color: C.kresge, fontWeight: 900 }}>Kresge</strong>
-                <strong style={{ fontWeight: 900, color: C.text }}>: distributes smaller grants more broadly, enabling grassroots reach across many orgs.</strong>
+                <strong style={{ fontWeight: 900, color: C.muted }}>: distributes smaller grants more broadly, enabling grassroots reach across many orgs.</strong>
               </p>
             </Card>
 
@@ -519,7 +518,7 @@ export default function App() {
                     </div>
                   </div>
                 ))}
-                <p className="text-xs mt-3" style={{ color: C.muted }}>
+                <p className="text-xs mt-3" style={{ color: C.muted, fontWeight: 900 }}>
                   General operating support is a best-practice marker per CEP research — Tides leads at ~55%.
                 </p>
               </Card>
@@ -648,16 +647,16 @@ export default function App() {
               <div className="grid gap-4" style={{ gridTemplateColumns: "1fr 1fr" }}>
                 {[
                  { org: "Tides Foundation", color: C.tides, recs: [
-                    <><strong style={{fontWeight:900, color: C.text}}>Expand multi-year commitments</strong> to 3-year cycles to deepen systemic impact</>,
-                    <><strong style={{fontWeight:900, color: C.text}}>Increase PRIs and blended finance instruments</strong> to leverage philanthropic capital</>,
-                    <><strong style={{fontWeight:900, color: C.text}}>Develop standardized outcome reporting protocols</strong> across fiscal sponsees</>,
-                    <><strong style={{fontWeight:900, color: C.text}}>Pilot participatory budgeting</strong> for Frontline Justice Fund allocations</>,
+                    <><strong style={{fontWeight:900, color: C.muted}}>Expand multi-year commitments</strong> to 3-year cycles to deepen systemic impact</>,
+                    <><strong style={{fontWeight:900, color: C.muted}}>Increase PRIs and blended finance instruments</strong> to leverage philanthropic capital</>,
+                    <><strong style={{fontWeight:900, color: C.muted}}>Develop standardized outcome reporting protocols</strong> across fiscal sponsees</>,
+                    <><strong style={{fontWeight:900, color: C.muted}}>Pilot participatory budgeting</strong> for Frontline Justice Fund allocations</>,
                 ]},
                 { org: "Kresge Foundation", color: C.kresge, recs: [
-                    <><strong style={{fontWeight:900, color: C.text}}>Increase general operating support</strong> share from ~40% toward the 55% sector benchmark</>,
-                    <><strong style={{fontWeight:900, color: C.text}}>Deepen rural and peri-urban geographic reach</strong> in climate-vulnerable regions</>,
-                    <><strong style={{fontWeight:900, color: C.text}}>Develop community-defined indicators</strong> alongside foundation-led evaluation</>,
-                    <><strong style={{fontWeight:900, color: C.text}}>Expand BIPOC-led fund threshold</strong> from 55% toward Tides' 68% benchmark</>,
+                    <><strong style={{fontWeight:900, color: C.muted}}>Increase general operating support</strong> share from ~40% toward the 55% sector benchmark</>,
+                    <><strong style={{fontWeight:900, color: C.muted}}>Deepen rural and peri-urban geographic reach</strong> in climate-vulnerable regions</>,
+                    <><strong style={{fontWeight:900, color: C.muted}}>Develop community-defined indicators</strong> alongside foundation-led evaluation</>,
+                    <><strong style={{fontWeight:900, color: C.muted}}>Expand BIPOC-led fund threshold</strong> from 55% toward Tides' 68% benchmark</>,
                 ]},
                 ].map(f => (
                   <div key={f.org}>
