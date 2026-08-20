@@ -256,7 +256,7 @@ export default function App() {
             }}
           >
             If you want to read why I built this website,{" "}
-            <span style={{ color: C.accent, textDecoration: "underline" }}>check my LinkedIn Post here</span>
+            <span style={{ color: C.accent, textDecoration: "underline" }}>check my LinkedIn Post</span>
           </a>
         </div>
       </div>
