@@ -235,11 +235,6 @@ export default function App() {
       <div style={{ background: C.surface, borderBottom: `1px solid ${C.border}` }} className="px-8 py-5">
         <div className="flex items-start justify-between flex-wrap gap-4">
           <div>
-            <div className="flex items-center gap-3 mb-1">
-              <span className="text-xs font-mono tracking-widest uppercase px-2 py-1 rounded" style={{ background: C.accent+"22", color: C.accent, position: "fixed", top: "1rem", right: "1rem", zIndex: 1000 }}>
-                Portfolio Project
-              </span>
-            </div>
             <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "1.75rem", color: C.text, lineHeight: 1.2 }}>
               Philanthropy Effectiveness <span style={{ color: C.accent }}>Evaluation Dashboard</span>
             </h1>
@@ -247,6 +242,22 @@ export default function App() {
               Tides Foundation · Kresge Foundation · Environmental & Racial Justice Grantmaking · 2015-2024
             </p>
           </div>
+          {/* ── Project note ── */}
+          <a
+            href="https://www.linkedin.com/feed/update/urn:li:activity:7435606470022307840/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-note"
+            style={{
+              marginLeft: "auto",
+              textAlign: "right",
+              color: C.muted,
+              textDecoration: "none",
+            }}
+          >
+            If you want to read why I built this website,{" "}
+            <span style={{ color: C.accent, textDecoration: "underline" }}>check my LinkedIn Post here</span>
+          </a>
         </div>
       </div>
 
